@@ -5,25 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeMaster | Курс Frontend-разработки</title>
     
-    <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     
-    <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
-    <!-- Дополнительные стили -->
     <style>
-        /* Плавный скролл */
         html {
             scroll-behavior: smooth;
         }
         
-        /* Кастомные цвета для hero-секции */
         .hero.is-custom {
             background: linear-gradient(135deg, #00d1b2, #009e8a);
         }
         
-        /* Стили для карточек */
         .card {
             border-radius: 16px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -36,20 +30,17 @@
             box-shadow: 0 12px 28px rgba(0, 209, 178, 0.15);
         }
         
-        /* Стили для иконок в карточках */
         .icon-large {
             font-size: 3rem;
             color: #00d1b2;
             margin-bottom: 1rem;
         }
         
-        /* Футер */
         .footer {
             background-color: #fafafa;
             padding: 3rem 1.5rem 2rem;
         }
         
-        /* Кнопки в футере */
         .social-button {
             transition: opacity 0.2s;
             margin-right: 0.5rem;
@@ -58,8 +49,7 @@
         .social-button:hover {
             opacity: 0.8;
         }
-        
-        /* Адаптивность для мобильных */
+
         @media screen and (max-width: 768px) {
             .navbar-brand {
                 padding-left: 1rem;
@@ -74,23 +64,19 @@
             }
         }
         
-        /* Стили для секций */
         .section {
             padding: 4rem 1.5rem;
         }
         
-        /* Изображение в секции "О курсе" */
         .about-image {
             border-radius: 16px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Навигационные ссылки */
+
         .navbar-item:hover {
             color: #00d1b2 !important;
         }
         
-        /* Кнопка CTA */
         .button.is-primary {
             background-color: #00d1b2;
         }
@@ -102,15 +88,13 @@
 </head>
 <body>
 
-    <!-- ==================== ХЕДЕР (фиксированный) ==================== -->
     <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="#hero">
-                    <strong class="is-size-4 has-text-primary">CodeMaster</strong>
+                    <strong class="is-size-4 has-text-blacky">CodeMaster</strong>
                 </a>
                 
-                <!-- Бургер-меню для мобильных -->
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -118,7 +102,6 @@
                 </a>
             </div>
 
-            <!-- Навигационное меню -->
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="#about">О курсе</a>
@@ -140,7 +123,6 @@
         </div>
     </nav>
 
-    <!-- ==================== HERO-СЕКЦИЯ ==================== -->
     <section class="hero is-custom is-halfheight" id="hero">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -168,7 +150,6 @@
         </div>
     </section>
 
-    <!-- ==================== СЕКЦИЯ "О КУРСЕ" ==================== -->
     <section class="section" id="about">
         <div class="container">
             <div class="columns is-vcentered is-multiline">
@@ -200,7 +181,7 @@
                 </div>
                 <div class="column is-6 has-text-centered">
                     <figure class="image is-4by3">
-                        <img src="https://via.placeholder.com/600x400/00d1b2/ffffff?text=Frontend+Course" 
+                        <img src="assets/images/o_curse.jpeg" 
                              alt="Онлайн обучение" 
                              class="about-image">
                     </figure>
@@ -209,7 +190,6 @@
         </div>
     </section>
 
-    <!-- ==================== СЕКЦИЯ ПРЕИМУЩЕСТВ ==================== -->
     <section class="section" id="features">
         <div class="container">
             <div class="has-text-centered mb-6">
@@ -220,7 +200,6 @@
             </div>
             
             <div class="columns is-multiline is-centered">
-                <!-- Преимущество 1 -->
                 <div class="column is-3">
                     <div class="card has-text-centered p-5">
                         <div class="card-content">
@@ -235,7 +214,6 @@
                     </div>
                 </div>
                 
-                <!-- Преимущество 2 -->
                 <div class="column is-3">
                     <div class="card has-text-centered p-5">
                         <div class="card-content">
@@ -250,7 +228,6 @@
                     </div>
                 </div>
                 
-                <!-- Преимущество 3 -->
                 <div class="column is-3">
                     <div class="card has-text-centered p-5">
                         <div class="card-content">
@@ -265,7 +242,6 @@
                     </div>
                 </div>
                 
-                <!-- Преимущество 4 -->
                 <div class="column is-3">
                     <div class="card has-text-centered p-5">
                         <div class="card-content">
@@ -283,7 +259,6 @@
         </div>
     </section>
 
-    <!-- ==================== СЕКЦИЯ ОТЗЫВОВ ==================== -->
     <section class="section" id="reviews">
         <div class="container">
             <div class="has-text-centered mb-6">
@@ -294,13 +269,12 @@
             </div>
             
             <div class="columns is-multiline">
-                <!-- Отзыв 1 -->
                 <div class="column is-4">
                     <div class="card p-4">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-64x64">
-                                    <img class="is-rounded" src="https://via.placeholder.com/64x64/00d1b2/ffffff?text=А" 
+                                    <img class="is-rounded" src="assets/images/anna.jpg" 
                                          alt="Анна">
                                 </figure>
                             </div>
@@ -326,13 +300,12 @@
                     </div>
                 </div>
                 
-                <!-- Отзыв 2 -->
                 <div class="column is-4">
                     <div class="card p-4">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-64x64">
-                                    <img class="is-rounded" src="https://via.placeholder.com/64x64/00d1b2/ffffff?text=Д" 
+                                    <img class="is-rounded" src="assets/images/dima.jpg" 
                                          alt="Дмитрий">
                                 </figure>
                             </div>
@@ -358,13 +331,12 @@
                     </div>
                 </div>
                 
-                <!-- Отзыв 3 -->
                 <div class="column is-4">
                     <div class="card p-4">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-64x64">
-                                    <img class="is-rounded" src="https://via.placeholder.com/64x64/00d1b2/ffffff?text=Е" 
+                                    <img class="is-rounded" src="assets/images/lena.jpg" 
                                          alt="Елена">
                                 </figure>
                             </div>
@@ -399,7 +371,6 @@
         </div>
     </section>
 
-    <!-- ==================== СЕКЦИЯ ЗАПИСИ (CTA) ==================== -->
     <section class="section has-background-light" id="order">
         <div class="container">
             <div class="columns is-vcentered">
@@ -431,7 +402,6 @@
         </div>
     </section>
 
-    <!-- ==================== ФУТЕР ==================== -->
     <footer class="footer" id="contacts">
         <div class="container">
             <div class="columns">
@@ -443,7 +413,7 @@
                     </p>
                 </div>
                 <div class="column is-4">
-                    <h4 class="title is-5">Контакты</h4>
+                    <h4 class="title is-5 has-text-black">Контакты</h4>
                     <p>
                         <span class="icon has-text-primary">
                             <i class="fas fa-envelope"></i>
@@ -461,10 +431,10 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </span>
                         Москва, пр. Вернандского, 78
-                    </p>
+                    </p>-
                 </div>
                 <div class="column is-4">
-                    <h4 class="title is-5">Мы в соцсетях</h4>
+                    <h4 class="title is-5 has-text-black">Мы в соцсетях</h4>
                     <div class="buttons">
                         <a href="#" class="button is-primary is-light social-button">
                             <span class="icon">
@@ -504,20 +474,15 @@
         </div>
     </footer>
 
-    <!-- ==================== СКРИПТ ДЛЯ БУРГЕР-МЕНЮ ==================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Получаем все элементы с классом "navbar-burger"
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             
-            // Добавляем обработчик на каждый бургер
             $navbarBurgers.forEach(el => {
                 el.addEventListener('click', () => {
-                    // Получаем целевое меню из data атрибута
                     const target = el.dataset.target;
                     const $target = document.getElementById(target);
                     
-                    // Переключаем класс "is-active" на бургере и меню
                     el.classList.toggle('is-active');
                     $target.classList.toggle('is-active');
                 });

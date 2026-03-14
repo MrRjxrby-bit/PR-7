@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMaster | Курс Frontend-разработки</title>
+    
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Дополнительные стили -->
+    <style>
+        /* Плавный скролл */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Кастомные цвета для hero-секции */
+        .hero.is-custom {
+            background: linear-gradient(135deg, #00d1b2, #009e8a);
+        }
+        
+        /* Стили для карточек */
+        .card {
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 209, 178, 0.15);
+        }
+        
+        /* Стили для иконок в карточках */
+        .icon-large {
+            font-size: 3rem;
+            color: #00d1b2;
+            margin-bottom: 1rem;
+        }
+        
+        /* Футер */
+        .footer {
+            background-color: #fafafa;
+            padding: 3rem 1.5rem 2rem;
+        }
+        
+        /* Кнопки в футере */
+        .social-button {
+            transition: opacity 0.2s;
+            margin-right: 0.5rem;
+        }
+        
+        .social-button:hover {
+            opacity: 0.8;
+        }
+        
+        /* Адаптивность для мобильных */
+        @media screen and (max-width: 768px) {
+            .navbar-brand {
+                padding-left: 1rem;
+            }
+            
+            .hero-body {
+                padding: 3rem 1rem;
+            }
+            
+            .card {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Стили для секций */
+        .section {
+            padding: 4rem 1.5rem;
+        }
+        
+        /* Изображение в секции "О курсе" */
+        .about-image {
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Навигационные ссылки */
+        .navbar-item:hover {
+            color: #00d1b2 !important;
+        }
+        
+        /* Кнопка CTA */
+        .button.is-primary {
+            background-color: #00d1b2;
+        }
+        
+        .button.is-primary:hover {
+            background-color: #00b89c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== ХЕДЕР (фиксированный) ==================== -->
+    <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#hero">
+                    <strong class="is-size-4 has-text-primary">CodeMaster</strong>
+                </a>
+                
+                <!-- Бургер-меню для мобильных -->
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <!-- Навигационное меню -->
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="#about">О курсе</a>
+                    <a class="navbar-item" href="#features">Преимущества</a>
+                    <a class="navbar-item" href="#reviews">Отзывы</a>
+                    <a class="navbar-item" href="#contacts">Контакты</a>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a href="#order" class="button is-primary">
+                                <strong>Записаться</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO-СЕКЦИЯ ==================== -->
+    <section class="hero is-custom is-halfheight" id="hero">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 has-text-white">
+                    Стань Frontend-разработчиком за 3 месяца
+                </h1>
+                <h2 class="subtitle is-4 has-text-white-bis mt-4">
+                    Практика, менторство и реальные проекты в портфолио
+                </h2>
+                <div class="buttons is-centered mt-5">
+                    <a href="#order" class="button is-large is-light">
+                        <span class="icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </span>
+                        <span>Начать обучение</span>
+                    </a>
+                    <a href="#about" class="button is-large is-outlined is-light">
+                        <span class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </span>
+                        <span>Узнать больше</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== СЕКЦИЯ "О КУРСЕ" ==================== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="columns is-vcentered is-multiline">
+                <div class="column is-6">
+                    <h2 class="title is-2">О курсе</h2>
+                    <p class="subtitle is-5 has-text-grey">
+                        Курс для новичков с нуля до уверенного junior-уровня
+                    </p>
+                    <div class="content is-medium">
+                        <p>
+                            Вы научитесь создавать современные веб-интерфейсы на HTML, CSS, 
+                            JavaScript и React. Вас ждут живые вебинары, домашние задания 
+                            с проверкой от менторов и итоговый проект для портфолио.
+                        </p>
+                        <p class="mt-4">
+                            <strong>Формат обучения:</strong> онлайн в удобное время<br>
+                            <strong>Длительность:</strong> 3 месяца<br>
+                            <strong>Итоговый проект:</strong> интернет-магазин на React
+                        </p>
+                    </div>
+                    <div class="buttons mt-5">
+                        <a href="#order" class="button is-primary is-medium">
+                            <span>Подробнее о программе</span>
+                            <span class="icon">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-6 has-text-centered">
+                    <figure class="image is-4by3">
+                        <img src="https://via.placeholder.com/600x400/00d1b2/ffffff?text=Frontend+Course" 
+                             alt="Онлайн обучение" 
+                             class="about-image">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== СЕКЦИЯ ПРЕИМУЩЕСТВ ==================== -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2">Почему выбирают нас</h2>
+                <p class="subtitle is-5 has-text-grey">
+                    4 причины начать обучение сегодня
+                </p>
+            </div>
+            
+            <div class="columns is-multiline is-centered">
+                <!-- Преимущество 1 -->
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
+                        <div class="card-content">
+                            <span class="icon-large">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Живые вебинары</h3>
+                            <p class="has-text-grey">
+                                Общение с преподавателем в реальном времени, ответы на вопросы
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Преимущество 2 -->
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
+                        <div class="card-content">
+                            <span class="icon-large">
+                                <i class="fas fa-user-check"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Поддержка ментора</h3>
+                            <p class="has-text-grey">
+                                Личный наставник проверяет код и помогает с трудными темами
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Преимущество 3 -->
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
+                        <div class="card-content">
+                            <span class="icon-large">
+                                <i class="fas fa-laptop-code"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Дипломный проект</h3>
+                            <p class="has-text-grey">
+                                Разработка интернет-магазина на React для портфолио
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Преимущество 4 -->
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
+                        <div class="card-content">
+                            <span class="icon-large">
+                                <i class="fas fa-briefcase"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Трудоустройство</h3>
+                            <p class="has-text-grey">
+                                Помощь с резюме, подготовка к собеседованиям
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== СЕКЦИЯ ОТЗЫВОВ ==================== -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2">Отзывы студентов</h2>
+                <p class="subtitle is-5 has-text-grey">
+                    Более 500 выпускников уже работают в IT
+                </p>
+            </div>
+            
+            <div class="columns is-multiline">
+                <!-- Отзыв 1 -->
+                <div class="column is-4">
+                    <div class="card p-4">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-64x64">
+                                    <img class="is-rounded" src="https://via.placeholder.com/64x64/00d1b2/ffffff?text=А" 
+                                         alt="Анна">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-5">Анна Смирнова</p>
+                                <p class="subtitle is-6 has-text-grey">Frontend-разработчик</p>
+                            </div>
+                        </div>
+                        <div class="content mt-3">
+                            <p>
+                                "Пришла с нуля, после курса устроилась в IT-компанию. 
+                                Отличная программа, поддержка менторов и много практики. 
+                                Спасибо CodeMaster!"
+                            </p>
+                            <div class="has-text-primary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Отзыв 2 -->
+                <div class="column is-4">
+                    <div class="card p-4">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-64x64">
+                                    <img class="is-rounded" src="https://via.placeholder.com/64x64/00d1b2/ffffff?text=Д" 
+                                         alt="Дмитрий">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-5">Дмитрий Иванов</p>
+                                <p class="subtitle is-6 has-text-grey">Team Lead</p>
+                            </div>
+                        </div>
+                        <div class="content mt-3">
+                            <p>
+                                "Рекомендую курс для тех, кто хочет системных знаний. 
+                                React разобрали отлично, сейчас сам нанимаю выпускников 
+                                CodeMaster в свою команду."
+                            </p>
+                            <div class="has-text-primary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Отзыв 3 -->
+                <div class="column is-4">
+                    <div class="card p-4">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-64x64">
+                                    <img class="is-rounded" src="https://via.placeholder.com/64x64/00d1b2/ffffff?text=Е" 
+                                         alt="Елена">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-5">Елена Козлова</p>
+                                <p class="subtitle is-6 has-text-grey">JavaScript-разработчик</p>
+                            </div>
+                        </div>
+                        <div class="content mt-3">
+                            <p>
+                                "Искала курс с живыми вебинарами и обратной связью. 
+                                Здесь всё идеально. Проект в портфолио помог получить 
+                                работу за 2 недели после выпуска."
+                            </p>
+                            <div class="has-text-primary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="has-text-centered mt-5">
+                <a href="#order" class="button is-primary is-large">
+                    Присоединиться к студентам
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== СЕКЦИЯ ЗАПИСИ (CTA) ==================== -->
+    <section class="section has-background-light" id="order">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-8">
+                    <h2 class="title is-2">Начни обучение сегодня</h2>
+                    <p class="subtitle is-5">
+                        Запишись на курс и получи доступ к первым занятиям бесплатно
+                    </p>
+                    <ul class="content">
+                        <li><i class="fas fa-check has-text-primary mr-2"></i> 3 месяца интенсивной практики</li>
+                        <li><i class="fas fa-check has-text-primary mr-2"></i> 4 живых вебинара в неделю</li>
+                        <li><i class="fas fa-check has-text-primary mr-2"></i> Помощь в трудоустройстве</li>
+                    </ul>
+                </div>
+                <div class="column is-4">
+                    <div class="card p-5">
+                        <h3 class="title is-4">Стоимость курса</h3>
+                        <p class="title is-2 has-text-primary">49 900 ₽</p>
+                        <p class="has-text-grey">или рассрочка от 4 500 ₽/мес</p>
+                        <button class="button is-primary is-fullwidth is-medium mt-4">
+                            Записаться на курс
+                        </button>
+                        <p class="has-text-centered is-size-7 mt-3">
+                            Осталось 5 мест на поток
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ФУТЕР ==================== -->
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <h4 class="title is-5">CodeMaster</h4>
+                    <p class="has-text-grey">
+                        Онлайн-школа программирования с практическим уклоном. 
+                        Обучаем востребованным IT-профессиям с 2020 года.
+                    </p>
+                </div>
+                <div class="column is-4">
+                    <h4 class="title is-5">Контакты</h4>
+                    <p>
+                        <span class="icon has-text-primary">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <a href="mailto:info@codemaster.ru">info@codemaster.ru</a>
+                    </p>
+                    <p>
+                        <span class="icon has-text-primary">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    </p>
+                    <p>
+                        <span class="icon has-text-primary">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                        Москва, ул. Программистов, 1
+                    </p>
+                </div>
+                <div class="column is-4">
+                    <h4 class="title is-5">Мы в соцсетях</h4>
+                    <div class="buttons">
+                        <a href="#" class="button is-primary is-light social-button">
+                            <span class="icon">
+                                <i class="fab fa-telegram"></i>
+                            </span>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="#" class="button is-primary is-light social-button">
+                            <span class="icon">
+                                <i class="fab fa-vk"></i>
+                            </span>
+                            <span>VK</span>
+                        </a>
+                        <a href="#" class="button is-primary is-light social-button">
+                            <span class="icon">
+                                <i class="fab fa-youtube"></i>
+                            </span>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                    <p class="mt-4">
+                        <strong>Подпишись на новости</strong><br>
+                        <span class="has-text-grey">Анонсы новых курсов и скидки</span>
+                    </p>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="has-text-centered has-text-grey">
+                <p>&copy; 2026 CodeMaster. Все права защищены.</p>
+                <p class="is-size-7">
+                    <a href="#" class="has-text-grey">Политика конфиденциальности</a> | 
+                    <a href="#" class="has-text-grey">Договор оферты</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== СКРИПТ ДЛЯ БУРГЕР-МЕНЮ ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Получаем все элементы с классом "navbar-burger"
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            
+            // Добавляем обработчик на каждый бургер
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    // Получаем целевое меню из data атрибута
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    
+                    // Переключаем класс "is-active" на бургере и меню
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

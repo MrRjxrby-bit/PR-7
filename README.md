@@ -12,4 +12,4 @@
 
 ## Публикация
 Проект опубликован на GitHub Pages:  
-🔗 https://mrrjxrby-bit.github.io/PR-7/#order
+🔗 https://mrrjxrby-bit.github.io/PR/

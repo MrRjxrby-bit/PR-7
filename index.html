@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeMaster | Контакты / Отзывы</title>
+    <title>CodeMaster | Главная</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -90,8 +90,43 @@
             border-bottom: 2px solid #00d1b2;
         }
         
+        .accordion-card {
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .accordion-card .card-header {
+            background-color: #fff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .accordion-card .card-header:hover {
+            background-color: #f9f9f9;
+        }
+        .accordion-card .card-header-title {
+            font-weight: 500;
+            color: #363636;
+        }
+        .accordion-card .card-header-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-card.is-active .card-header-icon {
+            transform: rotate(45deg);
+        }
+        .accordion-card .card-content {
+            display: none;
+            border-top: 1px solid #ededed;
+        }
+        .accordion-card.is-active .card-content {
+            display: block;
+        }
+        
         .form-feedback .field {
             margin-bottom: 1.25rem;
+        }
+        .checkbox-custom {
+            color: #4a4a4a;
         }
         
         .contact-info p {
@@ -101,24 +136,7 @@
             width: 1.8rem;
             color: #00d1b2;
         }
-
-        /* Стили для отображения ошибок */
-        .help.is-danger {
-            margin-top: 0.25rem;
-            font-size: 0.85rem;
-        }
         
-        .input.is-danger, .textarea.is-danger {
-            border-color: #f14668;
-        }
-        
-        .review-card {
-            transition: transform 0.3s ease;
-        }
-        
-        .review-card:hover {
-            transform: translateY(-4px);
-        }
     </style>
 </head>
 <body>
@@ -157,166 +175,135 @@
         </div>
     </nav>
 
-    <!-- Hero секция страницы контактов -->
-    <section class="hero is-custom is-small">
+    <section class="hero is-custom is-halfheight" id="hero">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title is-1 has-text-white">
-                    Контакты и отзывы
+                    Стань Frontend-разработчиком за 3 месяца
                 </h1>
                 <h2 class="subtitle is-4 has-text-white-bis mt-4">
-                    Напишите нам — мы ценим ваше мнение
+                    Практика, менторство и реальные проекты в портфолио
                 </h2>
+                <div class="buttons is-centered mt-5">
+                    <a href="index.html#order" class="button is-large is-light">
+                        <span class="icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </span>
+                        <span>Начать обучение</span>
+                    </a>
+                    <a href="index.html#about" class="button is-large is-outlined is-light">
+                        <span class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </span>
+                        <span>Узнать больше</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Основной контент: контактная информация + форма обратной связи -->
-    <section class="section">
+    <section class="section" id="about">
         <div class="container">
-            <div class="columns is-multiline is-vcentered">
-                <!-- Левая колонка: контактная информация -->
-                <div class="column is-5">
-                    <div class="contact-info">
-                        <h2 class="title is-2 has-text-primary">Свяжитесь с нами</h2>
-                        <p class="subtitle is-5 has-text-grey">
-                            Мы всегда рады ответить на ваши вопросы и получить обратную связь
+            <div class="columns is-vcentered is-multiline">
+                <div class="column is-6">
+                    <h2 class="title is-2">О курсе</h2>
+                    <p class="subtitle is-5 has-text-grey">
+                        Курс для новичков с нуля до уверенного junior-уровня
+                    </p>
+                    <div class="content is-medium">
+                        <p>
+                            Вы научитесь создавать современные веб-интерфейсы на HTML, CSS, 
+                            JavaScript и React. Вас ждут живые вебинары, домашние задания 
+                            с проверкой от менторов и итоговый проект для портфолио.
                         </p>
-                        
-                        <div class="box mt-5">
-                            <p class="mb-4">
-                                <span class="icon has-text-primary">
-                                    <i class="fas fa-envelope fa-lg"></i>
-                                </span>
-                                <strong>Email:</strong> 
-                                <a href="mailto:0laxty0@mail.ru">0laxty0@mail.ru</a>
+                        <p class="mt-4">
+                            <strong>Формат обучения:</strong> онлайн в удобное время<br>
+                            <strong>Длительность:</strong> 3 месяца<br>
+                            <strong>Итоговый проект:</strong> интернет-магазин на React
+                        </p>
+                    </div>
+                    <div class="buttons mt-5">
+                        <a href="index.html#order" class="button is-primary is-medium">
+                            <span>Подробнее о программе</span>
+                            <span class="icon">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-6 has-text-centered">
+                    <figure class="image is-4by3">
+                        <img src="https://placehold.co/600x400/00d1b2/white?text=Online+Learning" 
+                             alt="Онлайн обучение" 
+                             class="about-image">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2">Почему выбирают нас</h2>
+                <p class="subtitle is-5 has-text-grey">
+                    4 причины начать обучение сегодня
+                </p>
+            </div>
+            
+            <div class="columns is-multiline is-centered">
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
+                        <div class="card-content">
+                            <span class="icon-large">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Живые вебинары</h3>
+                            <p class="has-text-grey">
+                                Общение с преподавателем в реальном времени, ответы на вопросы
                             </p>
-                            <p class="mb-4">
-                                <span class="icon has-text-primary">
-                                    <i class="fas fa-phone fa-lg"></i>
-                                </span>
-                                <strong>Телефон:</strong> 
-                                <a href="tel:+79165710125">+7 (916) 571-01-25</a>
-                            </p>
-                            <p class="mb-4">
-                                <span class="icon has-text-primary">
-                                    <i class="fas fa-map-marker-alt fa-lg"></i>
-                                </span>
-                                <strong>Адрес:</strong> 
-                                Москва, пр. Вернадского, 78
-                            </p>
-                            <p>
-                                <span class="icon has-text-primary">
-                                    <i class="fas fa-clock fa-lg"></i>
-                                </span>
-                                <strong>Режим работы:</strong><br>
-                                Пн-Пт: 10:00 – 19:00<br>
-                                Сб: 11:00 – 16:00
-                            </p>
-                        </div>
-                        
-                        <div class="mt-5">
-                            <h3 class="title is-5">Мы в соцсетях</h3>
-                            <div class="buttons mt-3">
-                                <a href="#" class="button is-primary is-light">
-                                    <span class="icon"><i class="fab fa-telegram"></i></span>
-                                    <span>Telegram</span>
-                                </a>
-                                <a href="#" class="button is-primary is-light">
-                                    <span class="icon"><i class="fab fa-vk"></i></span>
-                                    <span>VK</span>
-                                </a>
-                                <a href="#" class="button is-primary is-light">
-                                    <span class="icon"><i class="fab fa-youtube"></i></span>
-                                    <span>YouTube</span>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Правая колонка: форма обратной связи с валидацией -->
-                <div class="column is-7">
-                    <div class="card">
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
                         <div class="card-content">
-                            <h3 class="title is-3 has-text-centered">Обратная связь</h3>
-                            <p class="has-text-centered has-text-grey mb-5">
-                                Оставьте отзыв или задайте вопрос — мы ответим в ближайшее время
+                            <span class="icon-large">
+                                <i class="fas fa-user-check"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Поддержка ментора</h3>
+                            <p class="has-text-grey">
+                                Личный наставник проверяет код и помогает с трудными темами
                             </p>
-                            
-                            <form id="feedbackForm">
-                                <!-- Поле ФИО -->
-                                <div class="field">
-                                    <label class="label">ФИО <span class="has-text-danger">*</span></label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="text" id="fullname" placeholder="Иванов Иван Иванович">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                    </div>
-                                    <p class="help" id="fullnameHelp">Введите фамилию, имя и отчество (минимум 2 слова)</p>
-                                </div>
-                                
-                                <!-- Поле Телефон -->
-                                <div class="field">
-                                    <label class="label">Телефон <span class="has-text-danger">*</span></label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="tel" id="phone" placeholder="+7 (___) ___-__-__">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-phone"></i>
-                                        </span>
-                                    </div>
-                                    <p class="help" id="phoneHelp">Формат: не менее 10 цифр (только цифры)</p>
-                                </div>
-                                
-                                <!-- Поле Email -->
-                                <div class="field">
-                                    <label class="label">Email <span class="has-text-danger">*</span></label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="email" id="email" placeholder="example@mail.ru">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                    </div>
-                                    <p class="help" id="emailHelp">Введите корректный email (содержит @ и точку)</p>
-                                </div>
-                                
-                                <!-- Поле Сообщение -->
-                                <div class="field">
-                                    <label class="label">Сообщение</label>
-                                    <div class="control">
-                                        <textarea class="textarea" id="message" placeholder="Ваш отзыв или вопрос..."></textarea>
-                                    </div>
-                                    <p class="help" id="messageHelp">До 500 символов (необязательно)</p>
-                                </div>
-                                
-                                <!-- Чекбокс согласия -->
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="agreement" required>
-                                            Я согласен на обработку персональных данных <span class="has-text-danger">*</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                                <!-- Кнопки -->
-                                <div class="field is-grouped is-grouped-centered mt-5">
-                                    <div class="control">
-                                        <button type="submit" class="button is-primary">
-                                            <span class="icon">
-                                                <i class="fas fa-paper-plane"></i>
-                                            </span>
-                                            <span>Отправить</span>
-                                        </button>
-                                    </div>
-                                    <div class="control">
-                                        <button type="reset" class="button is-light">
-                                            <span>Очистить</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
+                        <div class="card-content">
+                            <span class="icon-large">
+                                <i class="fas fa-laptop-code"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Дипломный проект</h3>
+                            <p class="has-text-grey">
+                                Разработка интернет-магазина на React для портфолио
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column is-3">
+                    <div class="card has-text-centered p-5">
+                        <div class="card-content">
+                            <span class="icon-large">
+                                <i class="fas fa-briefcase"></i>
+                            </span>
+                            <h3 class="title is-5 mt-4">Трудоустройство</h3>
+                            <p class="has-text-grey">
+                                Помощь с резюме, подготовка к собеседованиям
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -324,11 +311,10 @@
         </div>
     </section>
 
-    <!-- Блок с отзывами студентов -->
-    <section class="section has-background-light">
+    <section class="section" id="reviews">
         <div class="container">
             <div class="has-text-centered mb-6">
-                <h2 class="title is-2">Отзывы наших студентов</h2>
+                <h2 class="title is-2">Отзывы студентов</h2>
                 <p class="subtitle is-5 has-text-grey">
                     Более 500 выпускников уже работают в IT
                 </p>
@@ -336,11 +322,11 @@
             
             <div class="columns is-multiline">
                 <div class="column is-4">
-                    <div class="card p-4 review-card">
+                    <div class="card p-4">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-64x64">
-                                    <img class="is-rounded" src="https://placehold.co/64x64/00d1b2/white?text=А" alt="Анна">
+                                    <img class="is-rounded" src="https://placehold.co/64x64/cccccc/white?text=A" alt="Анна">
                                 </figure>
                             </div>
                             <div class="media-content">
@@ -366,11 +352,11 @@
                 </div>
                 
                 <div class="column is-4">
-                    <div class="card p-4 review-card">
+                    <div class="card p-4">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-64x64">
-                                    <img class="is-rounded" src="https://placehold.co/64x64/00d1b2/white?text=Д" alt="Дмитрий">
+                                    <img class="is-rounded" src="https://placehold.co/64x64/cccccc/white?text=D" alt="Дмитрий">
                                 </figure>
                             </div>
                             <div class="media-content">
@@ -396,11 +382,11 @@
                 </div>
                 
                 <div class="column is-4">
-                    <div class="card p-4 review-card">
+                    <div class="card p-4">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-64x64">
-                                    <img class="is-rounded" src="https://placehold.co/64x64/00d1b2/white?text=Е" alt="Елена">
+                                    <img class="is-rounded" src="https://placehold.co/64x64/cccccc/white?text=E" alt="Елена">
                                 </figure>
                             </div>
                             <div class="media-content">
@@ -425,11 +411,47 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="has-text-centered mt-5">
+                <a href="index.html#order" class="button is-primary is-large">
+                    Присоединиться к студентам
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Футер -->
-    <footer class="footer">
+    <section class="section has-background-light" id="order">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-8">
+                    <h2 class="title is-2 has-text-black">Начни обучение сегодня</h2>
+                    <p class="subtitle is-5">
+                        Запишись на курс и получи доступ к первым занятиям бесплатно
+                    </p>
+                    <ul class="content">
+                        <li><i class="fas fa-check has-text-primary mr-2"></i> 3 месяца интенсивной практики</li>
+                        <li><i class="fas fa-check has-text-primary mr-2"></i> 4 живых вебинара в неделю</li>
+                        <li><i class="fas fa-check has-text-primary mr-2"></i> Помощь в трудоустройстве</li>
+                    </ul>
+                </div>
+                <div class="column is-4">
+                    <div class="card p-5">
+                        <h3 class="title is-4">Стоимость курса</h3>
+                        <p class="title is-2 has-text-primary">49 900 ₽</p>
+                        <p class="has-text-grey">или рассрочка от 4 500 ₽/мес</p>
+                        <button class="button is-primary is-fullwidth is-medium mt-4">
+                            Записаться на курс
+                        </button>
+                        <p class="has-text-centered is-size-7 mt-3">
+                            Осталось 5 мест на поток
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacts">
         <div class="container">
             <div class="columns">
                 <div class="column is-4">
@@ -445,34 +467,40 @@
                         <span class="icon has-text-primary">
                             <i class="fas fa-envelope"></i>
                         </span>
-                        <a href="mailto:0laxty0@mail.ru">0laxty0@mail.ru</a>
+                        <a href="mailto:info@codemaster.ru">0laxty0@mail.ru</a>
                     </p>
                     <p>
                         <span class="icon has-text-primary">
                             <i class="fas fa-phone"></i>
                         </span>
-                        <a href="tel:+79165710125">+7 (916) 571-01-25</a>
+                        <a href="tel:+79991234567">+7 (916) 571-01-25</a>
                     </p>
                     <p>
                         <span class="icon has-text-primary">
                             <i class="fas fa-map-marker-alt"></i>
                         </span>
-                        Москва, пр. Вернадского, 78
+                        Москва, пр. Вернандского, 78
                     </p>
                 </div>
                 <div class="column is-4">
                     <h4 class="title is-5 has-text-black">Мы в соцсетях</h4>
                     <div class="buttons">
                         <a href="#" class="button is-primary is-light social-button">
-                            <span class="icon"><i class="fab fa-telegram"></i></span>
+                            <span class="icon">
+                                <i class="fab fa-telegram"></i>
+                            </span>
                             <span>Telegram</span>
                         </a>
                         <a href="#" class="button is-primary is-light social-button">
-                            <span class="icon"><i class="fab fa-vk"></i></span>
+                            <span class="icon">
+                                <i class="fab fa-vk"></i>
+                            </span>
                             <span>VK</span>
                         </a>
                         <a href="#" class="button is-primary is-light social-button">
-                            <span class="icon"><i class="fab fa-youtube"></i></span>
+                            <span class="icon">
+                                <i class="fab fa-youtube"></i>
+                            </span>
                             <span>YouTube</span>
                         </a>
                     </div>
@@ -495,200 +523,8 @@
         </div>
     </footer>
 
-    <!-- Скрипт валидации (validation.js) -->
-    <script>
-        // validation.js - полная валидация формы
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('feedbackForm');
-            if (!form) return;
-            
-            // Функция показа ошибки
-            function showError(input, message) {
-                input.classList.add('is-danger');
-                // Удаляем предыдущее сообщение об ошибке для этого поля, если есть
-                const parent = input.closest('.field');
-                const oldHelp = parent.querySelector('.help.is-danger');
-                if (oldHelp) oldHelp.remove();
-                
-                const help = document.createElement('p');
-                help.classList.add('help', 'is-danger');
-                help.textContent = message;
-                parent.appendChild(help);
-            }
-            
-            // Функция удаления ошибок с конкретного поля
-            function clearError(input) {
-                input.classList.remove('is-danger');
-                const parent = input.closest('.field');
-                const errors = parent.querySelectorAll('.help.is-danger');
-                errors.forEach(el => el.remove());
-            }
-            
-            // Обработчик отправки формы
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                // Сбрасываем все предыдущие ошибки
-                document.querySelectorAll('.input.is-danger, .textarea.is-danger').forEach(el => {
-                    el.classList.remove('is-danger');
-                });
-                document.querySelectorAll('.help.is-danger').forEach(el => el.remove());
-                
-                let isValid = true;
-                
-                // 1. Проверка ФИО (не пустое, минимум 2 слова)
-                const fullname = document.getElementById('fullname');
-                const fullnameValue = fullname.value.trim();
-                if (fullnameValue === '') {
-                    showError(fullname, 'Пожалуйста, введите ФИО');
-                    isValid = false;
-                } else {
-                    const words = fullnameValue.split(/\s+/).filter(word => word.length > 0);
-                    if (words.length < 2) {
-                        showError(fullname, 'Введите хотя бы фамилию и имя (минимум 2 слова)');
-                        isValid = false;
-                    }
-                }
-                
-                // 2. Проверка телефона (не пустой, минимум 10 цифр)
-                const phone = document.getElementById('phone');
-                const phoneValue = phone.value.trim();
-                const phoneDigits = phoneValue.replace(/\D/g, ''); // удаляем все не-цифры
-                if (phoneValue === '') {
-                    showError(phone, 'Введите номер телефона');
-                    isValid = false;
-                } else if (phoneDigits.length < 10) {
-                    showError(phone, 'Введите минимум 10 цифр номера (без учета скобок и пробелов)');
-                    isValid = false;
-                }
-                
-                // 3. Проверка email (не пустой, содержит @ и точку)
-                const email = document.getElementById('email');
-                const emailValue = email.value.trim();
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (emailValue === '') {
-                    showError(email, 'Введите email');
-                    isValid = false;
-                } else if (!emailPattern.test(emailValue)) {
-                    showError(email, 'Введите корректный email (пример: name@domain.ru)');
-                    isValid = false;
-                }
-                
-                // 4. Проверка чекбокса согласия
-                const agreement = document.getElementById('agreement');
-                if (!agreement.checked) {
-                    const agreementField = agreement.closest('.field');
-                    const oldHelp = agreementField.querySelector('.help.is-danger');
-                    if (!oldHelp) {
-                        const help = document.createElement('p');
-                        help.classList.add('help', 'is-danger');
-                        help.textContent = 'Необходимо согласие на обработку персональных данных';
-                        agreementField.appendChild(help);
-                    }
-                    isValid = false;
-                }
-                
-                // Если всё корректно - отправляем кастомное событие для логгера
-                if (isValid) {
-                    const message = document.getElementById('message');
-                    const messageValue = message.value.trim();
-                    
-                    const formData = {
-                        fullname: fullnameValue,
-                        phone: phoneValue,
-                        email: emailValue,
-                        message: messageValue || '(не заполнено)'
-                    };
-                    
-                    // Создаем и диспатчим кастомное событие
-                    const customEvent = new CustomEvent('formValid', { detail: formData });
-                    document.dispatchEvent(customEvent);
-                    
-                    // Показываем уведомление об успехе
-                    alert('Форма успешно отправлена! Данные выведены в консоль.');
-                    
-                    // Опционально: очищаем форму после успешной отправки
-                    // form.reset();
-                    // Убираем все классы ошибок, если были
-                    document.querySelectorAll('.input.is-danger, .textarea.is-danger').forEach(el => {
-                        el.classList.remove('is-danger');
-                    });
-                }
-            });
-            
-            // Обработчик ввода - сброс ошибки при изменении поля
-            const inputs = document.querySelectorAll('.input, .textarea');
-            inputs.forEach(input => {
-                input.addEventListener('input', function() {
-                    clearError(this);
-                });
-            });
-            
-            // Сброс ошибки чекбокса при его изменении
-            const agreementCheckbox = document.getElementById('agreement');
-            if (agreementCheckbox) {
-                agreementCheckbox.addEventListener('change', function() {
-                    const parent = this.closest('.field');
-                    const errors = parent.querySelectorAll('.help.is-danger');
-                    errors.forEach(el => el.remove());
-                });
-            }
-            
-            // Обработчик кнопки reset - очищаем все ошибки при сбросе формы
-            const resetButton = form.querySelector('button[type="reset"]');
-            if (resetButton) {
-                resetButton.addEventListener('click', function() {
-                    setTimeout(() => {
-                        document.querySelectorAll('.input.is-danger, .textarea.is-danger').forEach(el => {
-                            el.classList.remove('is-danger');
-                        });
-                        document.querySelectorAll('.help.is-danger').forEach(el => el.remove());
-                    }, 10);
-                });
-            }
-        });
-    </script>
-
-    <!-- Скрипт логгера в консоль (consoleLogger.js) -->
-    <script>
-        // consoleLogger.js - вывод данных формы в консоль
-        document.addEventListener('DOMContentLoaded', function() {
-            // Слушаем кастомное событие formValid от validation.js
-            document.addEventListener('formValid', function(event) {
-                const formData = event.detail;
-                
-                // Очищаем консоль для наглядности
-                console.clear();
-                
-                // Стилизованный вывод в консоль
-                console.log('%c=== Новая отправка формы ===', 'color: #00d1b2; font-size: 14px; font-weight: bold;');
-                console.log('%cФИО:', 'color: #4a4a4a; font-weight: bold;', formData.fullname);
-                console.log('%cТелефон:', 'color: #4a4a4a; font-weight: bold;', formData.phone);
-                console.log('%cEmail:', 'color: #4a4a4a; font-weight: bold;', formData.email);
-                console.log('%cСообщение:', 'color: #4a4a4a; font-weight: bold;', formData.message);
-                
-                // Вывод временной метки
-                const timestamp = new Date().toLocaleString('ru-RU', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit'
-                });
-                console.log('%cВремя отправки:', 'color: #4a4a4a; font-weight: bold;', timestamp);
-                console.log('%c========================', 'color: #00d1b2;');
-                
-                // Также выводим объект целиком для дополнительной информации
-                console.log('Полные данные формы:', formData);
-            });
-        });
-    </script>
-
-    <!-- Скрипт для бургер-меню и активной навигации -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Бургер-меню
             const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             $navbarBurgers.forEach(el => {
                 el.addEventListener('click', () => {
@@ -699,8 +535,7 @@
                 });
             });
             
-            // Активная ссылка в навигации
-            const currentPage = window.location.pathname.split('/').pop() || 'contacts.html';
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             if (currentPage === 'index.html') {
                 document.getElementById('nav-home')?.classList.add('is-active');
             } else if (currentPage === 'contacts.html') {
